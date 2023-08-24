@@ -21,6 +21,15 @@ class Organizer:
 
     def unzip_game(self):
         for game in self.download_dir.iterdir():
+            while True:
+                if ".part" in game.suffix:
+                    print(".part in download")
+                    print(game)
+                    sleep(10)
+                else:
+                    break
+
+        for game in self.download_dir.iterdir():
             if ".zip" in game.suffix:
                 unpack_archive(game,self.inp_dir / "Games")
                 print(f"unpack - {game}")
@@ -38,11 +47,15 @@ class Organizer:
                     file = emulators_dir / "GameBoy" / game.name
                     print(f"Moving {game} -> {file}") # mover para /gameboy
                     move(game,file)
+                case ".gba":
+                    file =  emulators_dir/ "GBA" / game.name
+                    print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 2600
+                    move(game,file)            
                 case ".smc":
                     file = emulators_dir /"SNES" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /snes
                     move(game,file)
-                case ".z64":
+                case ".z64" | ".n64":
                     file =  emulators_dir/ "N64" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /N64
                     move(game,file)
@@ -50,8 +63,7 @@ class Organizer:
                     file =  emulators_dir/ "Atari/Atari 2600" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 2600
                     move(game,file)
-                
-    
+
 def run():
     o = Organizer("/home/xury/Desktop")
 
