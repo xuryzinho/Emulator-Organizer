@@ -3,6 +3,7 @@ Emulators/Atari/Atari 2600/
 Emulators/Atari/Atari 7800/
 Emulators/Dreamcast/
 Emulators/GameBoy
+Emualators/GameCube
 Emulators/GBA/
 Emulators/GBColor/
 Emulators/Genesis/
