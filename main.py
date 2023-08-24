@@ -1,4 +1,5 @@
 from shutil import unpack_archive,move
+from pyunpack import Archive
 from pathlib import Path
 from time import sleep
 
@@ -30,9 +31,22 @@ class Organizer:
                     break
 
         for game in self.download_dir.iterdir():
-            if ".zip" in game.suffix:
+            if ".part" in game.suffix:
+                while True:
+                    print(".part in download")
+                    print(game)
+                    sleep(10)
+
+            elif ".zip" in game.suffix:
                 unpack_archive(game,self.inp_dir / "Games")
                 print(f"unpack - {game}")
+
+                game.unlink()
+                print(f"delete - {game}")
+
+            elif ".7z" in game.suffix:
+                file =  self.inp_dir / "Emulators" / "GameCube"
+                Archive(game).extractall(file) #extraindo para /GameCube
 
                 game.unlink()
                 print(f"delete - {game}")
@@ -48,7 +62,7 @@ class Organizer:
                     print(f"Moving {game} -> {file}") # mover para /gameboy
                     move(game,file)
                 case ".gba":
-                    file =  emulators_dir/ "GBA" / game.name
+                    file =  emulators_dir / "GBA" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 2600
                     move(game,file)            
                 case ".smc":
@@ -56,18 +70,20 @@ class Organizer:
                     print(f"Moving - {game} -> {file}") # mover para /snes
                     move(game,file)
                 case ".z64" | ".n64":
-                    file =  emulators_dir/ "N64" / game.name
+                    file =  emulators_dir / "N64" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /N64
                     move(game,file)
                 case ".a26":
-                    file =  emulators_dir/ "Atari/Atari 2600" / game.name
+                    file =  emulators_dir / "Atari/Atari 2600" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 2600
                     move(game,file)
+
 
 def run():
     o = Organizer("/home/xury/Desktop")
 
     while True:
+        o.creatingFolders()
         o.unzip_game()
         o.move_games()
 
