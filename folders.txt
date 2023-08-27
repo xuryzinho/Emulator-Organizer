@@ -4,7 +4,7 @@ Emulators/Atari/Atari 5200/
 Emulators/Atari/Atari 7800/
 Emulators/Dreamcast/
 Emulators/GameBoy
-Emualators/GameCube
+Emulators/GameCube
 Emulators/GBA/
 Emulators/GBColor/
 Emulators/Genesis/
@@ -17,4 +17,5 @@ Emulators/PS2/
 Emulators/PSP/
 Emulators/SNES/
 Emulators/Wii/
+Emulators/Xbox
 Games
