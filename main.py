@@ -24,7 +24,7 @@ class Organizer:
     def unzip_game(self):
         for game in self.download_dir.iterdir():
             while True:
-                if ".part" in game.suffix:
+                if ".part" in game.suffix and game.exists():
                     print(".part in download")
                     print(game)
                     sleep(10)
@@ -81,8 +81,12 @@ class Organizer:
                 case ".gbc" | ".GBC":
                     file =  emulators_dir / "GBColor" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 2600
-                    move(game,file)      
-                case ".smc" | ".nes" | ".sfc":
+                    move(game,file)
+                case ".nes":
+                    file = emulators_dir /"NES" / game.name
+                    print(f"Moving - {game} -> {file}") # mover para /nes
+                    move(game,file)                    
+                case ".smc" | ".sfc":
                     file = emulators_dir /"SNES" / game.name
                     print(f"Moving - {game} -> {file}") # mover para /snes
                     move(game,file)
