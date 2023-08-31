@@ -54,6 +54,10 @@ def check_type_game(emulators_dir,game):
             file =  emulators_dir / "Nintendo DS" / game.name
             print(f"Moving - {game} -> {file}") # mover para /Nintendo DS
             move(game,file)
+        case ".3ds":
+            file =  emulators_dir / "Nintendo 3DS" / game.name
+            print(f"Moving - {game} -> {file}") # mover para /Nintendo 3DS
+            move(game,file)
         case ".wux":
             file =  emulators_dir / "Wii U" / game.name
             print(f"Moving - {game} -> {file}") # mover para /Wii U
