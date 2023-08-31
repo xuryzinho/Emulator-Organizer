@@ -2,6 +2,7 @@
 
 from shutil import move
 
+# OBS: Jogos mais atuais geralmente vem em .iso ou em formatos diferentes
 
 def check_type_game(emulators_dir,game):
     match (game.suffix):
@@ -41,7 +42,7 @@ def check_type_game(emulators_dir,game):
             file =  emulators_dir / "Atari/Atari 7800" / game.name
             print(f"Moving - {game} -> {file}") # mover para /Atari/Atari 7800
             move(game,file)
-        case ".wbfs":
+        case ".wbfs" | ".rvz" | ".gcz":
             file =  emulators_dir / "Wii" / game.name
             print(f"Moving - {game} -> {file}") # mover para /Wii
             move(game,file)
@@ -53,3 +54,8 @@ def check_type_game(emulators_dir,game):
             file =  emulators_dir / "Nintendo DS" / game.name
             print(f"Moving - {game} -> {file}") # mover para /Nintendo DS
             move(game,file)
+        case ".wux":
+            file =  emulators_dir / "Wii U" / game.name
+            print(f"Moving - {game} -> {file}") # mover para /Wii U
+            move(game,file)
+            
