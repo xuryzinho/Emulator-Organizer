@@ -34,19 +34,23 @@ class Organizer:
                     break
         
         for game in self.download_dir.iterdir():
-            if ".zip" in game.suffix:
-                unpack_archive(game,self.inp_dir / "Games")
+            if ".part" in game.suffix and game.exists():
+                print(f"{game} in download")
+                sleep(10)
+
+            elif ".zip" in game.suffix:
                 print(f"unpack - {game}")
+                unpack_archive(game,self.inp_dir / "Games")
 
                 game.unlink()
                 print(f"delete - {game}")
             
             elif ".rar" in game.suffix:
-                print(game)
+                print(f"unpack - {game}")
+
                 rf = RarFile(game)
                 rf.extractall(self.inp_dir / "Games")
                 rf.close()
-                print(f"unpack - {game}")
                     
                 game.unlink()
                 print(f"delete - {game}")
