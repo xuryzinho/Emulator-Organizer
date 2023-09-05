@@ -36,7 +36,7 @@ class Organizer:
         for game in self.download_dir.iterdir():
             if ".part" in game.suffix and game.exists():
                 print(f"{game} in download")
-                sleep(10)
+                sleep(10)   
 
             elif ".zip" in game.suffix:
                 print(f"unpack - {game}")
@@ -81,4 +81,6 @@ def run():
 
         sleep(3)
 
-run()
+if __name__ == "__main__":
+    run()
+    
