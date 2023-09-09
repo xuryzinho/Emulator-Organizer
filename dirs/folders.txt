@@ -1,0 +1,25 @@
+Emulators/Amiga/
+Emulators/Atari/Atari 2600/
+Emulators/Atari/Atari 5200/
+Emulators/Atari/Atari 7800/
+Emulators/Dreamcast/
+Emulators/GameBoy
+Emulators/GameCube
+Emulators/GBA/
+Emulators/GBColor/
+Emulators/Genesis/
+Emulators/MasterSystem/
+Emulators/N64/
+Emulators/NES/
+Emulators/Nintendo 3DS/
+Emulators/Nintendo DS/
+Emulators/PS1/
+Emulators/PS2/
+Emulators/PS3/
+Emulators/PSP/
+Emulators/SNES/
+Emulators/Wii/
+Emulators/Wii U/
+Emulators/Xbox/Xbox 360
+Emulators/Xbox/Xbox
+Games
