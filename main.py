@@ -7,12 +7,31 @@ import py7zr
 
 
 class Organizer:
-    def __init__(self,inp_dir):
-        self.inp_dir = Path(inp_dir)
+    def __init__(self):
+        self.inp_dir = Path(str(Path("./dirs/directory.txt").read_text()).rstrip()) # Retornando o diretorio do arquivo ./dirs/directory.txt e quebrando as linhas do mesmo
         self.download_dir = Path().home() / "Downloads"
 
+    def checkDir(self):
+        # Checando se diretorio passado em ./dirs/directory.txt existe
+        while True:
+            print(str(self.inp_dir) == ".")
+            print(Path(self.inp_dir).exists())
+            
+            if str(self.inp_dir) == "." or not self.inp_dir.exists():
+                new_dir = input("Digite um diretorio: ")
+                if not Path(new_dir).is_dir() or not Path(new_dir).exists():
+                    print("Ocorreu um erro, digite novamente.")
+
+                else:
+                    WRITE_DIRECTORY = Path(__file__).parents[0] / "dirs/directory.txt"
+                    WRITE_DIRECTORY.write_text(new_dir)
+                    break
+            else:
+                print("Olha!")
+                break
+            
     def creatingFolders(self):        
-        with open("./folders.txt","r") as file:
+        with open("./dirs/folders.txt","r") as file:
             # Removendo o "\n"
 
             for lineb in file:
@@ -72,10 +91,10 @@ class Organizer:
             check_type_game(emulators_dir,game)
 
 def run():
-    o = Organizer("/data/sata/IKONOS")
+    o = Organizer()
+    o.checkDir()
 
     while True:
-        o.creatingFolders()
         o.unzip_game()
         o.move_games()
 
@@ -83,4 +102,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-    
