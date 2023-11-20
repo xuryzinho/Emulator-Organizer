@@ -14,11 +14,11 @@ class Organizer:
     def checkDir(self):
         # Checando se diretorio passado em ./dirs/directory.txt existe
         while True:
-            print(str(self.inp_dir) == ".")
-            print(Path(self.inp_dir).exists())
-            
             if str(self.inp_dir) == "." or not self.inp_dir.exists():
                 new_dir = input("Digite um diretorio: ")
+                
+                print(Path(new_dir))
+
                 if not Path(new_dir).is_dir() or not Path(new_dir).exists():
                     print("Ocorreu um erro, digite novamente.")
 
@@ -27,9 +27,8 @@ class Organizer:
                     WRITE_DIRECTORY.write_text(new_dir)
                     break
             else:
-                print("Olha!")
                 break
-            
+
     def creatingFolders(self):        
         with open("./dirs/folders.txt","r") as file:
             # Removendo o "\n"
@@ -93,6 +92,7 @@ class Organizer:
 def run():
     o = Organizer()
     o.checkDir()
+    o.creatingFolders()
 
     while True:
         o.unzip_game()
