@@ -10,9 +10,11 @@ Quando você baixa o Emu-Or pela primeira vez, ele solicita que você escolha um
 
 Exemplo:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7b1ece91-e147-4146-8e5c-3c5d151fb553/60825d17-6239-487d-b061-6aa6a4ac983f/Untitled.png)
+![image](https://github.com/ryuxinn/Emulator-Organizer/assets/82833077/7775b711-4741-43e3-a4f2-8139b233897c)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7b1ece91-e147-4146-8e5c-3c5d151fb553/0938e408-4966-4fa7-81dd-c4d7afefb54d/Untitled.png)
+
+![image](https://github.com/ryuxinn/Emulator-Organizer/assets/82833077/d16ddb4c-f7f8-45dc-8610-0f556e1c681c)
+
 
 ## Extração de arquivos
 
@@ -20,7 +22,8 @@ Como mencionado no primeiro tópico, a extração de arquivos funciona da seguin
 
 Exemplo: 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7b1ece91-e147-4146-8e5c-3c5d151fb553/f5e27b3e-897a-45aa-a569-e132f37cb7ac/Untitled.png)
+![image](https://github.com/ryuxinn/Emulator-Organizer/assets/82833077/3c3385bc-e2ee-4769-be41-fd29d3185dcc)
+
 
 ## Compatibilidade
 
